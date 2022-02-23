@@ -32,16 +32,20 @@ services:
       - "3000:3000"
     volumes:
       - ./front:/app
+      - /app/node_modules
     depends_on:
       - api
-    environment: 
+    environment:
       - HOST=0.0.0.0
     command: yarn dev
 
   nginx:
-    image: nginx:1.13
     ports:
       - "80:80"
+    build:
+      context: .
+      dockerfile: ./docker/nginx/Dockerfile
+      target: dev_stage
     env_file: ./.env
     volumes:
       - ./nginx/conf/local.conf.d:/etc/nginx/conf.d
