@@ -1,5 +1,6 @@
 <template>
   <div>
+      私はアンパンマンです。
   </div>
 </template>
 
