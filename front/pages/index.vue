@@ -1,9 +1,6 @@
 <template>
   <div>
-
-    paaaaazcal 
-
-
+      私はアンパンマンです。
   </div>
 </template>
 
