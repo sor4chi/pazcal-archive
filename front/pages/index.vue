@@ -1,5 +1,6 @@
 <template>
   <div>
+    pazcal site
   </div>
 </template>
 
