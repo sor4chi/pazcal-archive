@@ -5,5 +5,5 @@ RUN wget --quiet -O - /tmp/pubkey.gpg https://dl.yarnpkg.com/debian/pubkey.gpg |
 RUN set -x && apt-get update -y -qq && apt-get install -yq nodejs yarn
 
 WORKDIR /app
-ADD ./api /app
+COPY ./api /app
 RUN bundle install
