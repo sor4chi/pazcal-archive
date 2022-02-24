@@ -1,7 +1,5 @@
 <template>
-  <div>
-      私はアンパンマンです。
-  </div>
+  <div>私はアンパンマンです。</div>
 </template>
 
 <script setup lang="ts">
