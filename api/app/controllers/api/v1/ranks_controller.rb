@@ -4,7 +4,12 @@ module Api
       before_action :set_rank, only: [:update]
       
       def index
-        @ranks = Rank.all
+        @ranks_row = Rank.all
+        @ranks = @ranks_row.map { |rank| {
+          rank: rank.id,
+          experience: rank.experience,
+          stamina: rank.stamina,
+        }}
         render json: @ranks
       end
 
