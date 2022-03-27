@@ -1,0 +1,57 @@
+@import "../variable";
+
+.wrapper {
+  max-width: 100rem;
+  margin: auto;
+}
+.inputs {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+.input_container {
+  display: flex;
+  flex-direction: column;
+}
+.input {
+  width: 30rem;
+  padding: 1rem;
+  margin: 0 1rem;
+  border-radius: 0.5rem;
+  border: 1px solid #ccc;
+  font-size: 1.8rem;
+  &:focus {
+    outline: $accent-color solid 1px;
+  }
+}
+.label {
+  margin: 1rem;
+  font-size: 1.2rem;
+}
+.button {
+  display: block;
+  padding: 0.5rem 2rem;
+  margin: 2rem auto;
+  border-radius: 0.5rem;
+  border: none;
+  background: $accent-gradient;
+  color: $light;
+  font-size: 1.8rem;
+}
+
+.result {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin-top: 1rem;
+  font-size: 3rem;
+  font-weight: bold;
+  color: $accent-color;
+  background: $accent-gradient;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}

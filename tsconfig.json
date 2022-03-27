@@ -18,7 +18,12 @@
     "isolatedModules": true,
     "jsx": "preserve",
     "incremental": true,
-    "baseUrl": "."
+    "baseUrl": ".",
+    "paths": {
+      "styles": [
+        "styles/" // for Loading CSS Modules Extension
+      ],
+    },
   },
   "include": [
     "next-env.d.ts",
