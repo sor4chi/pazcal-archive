@@ -1,3 +1,4 @@
+import Image from "next/image";
 import Link from "next/link";
 import styles from "styles/components/Navbar/Mobile.module.scss";
 import { useRouter } from "next/router";
@@ -37,21 +38,26 @@ const MobileNavbar = () => {
   ];
 
   return (
-    <nav className={styles.nav}>
-      {NavItems.map((item) => (
-        <Link href={item.route} key={item.route}>
-          <a
-            className={[
-              styles.navItem,
-              isThisPage(item.route) ? styles.active : styles.inactive,
-            ].join(" ")}
-          >
-            {item.icon}
-            {item.name}
-          </a>
-        </Link>
-      ))}
-    </nav>
+    <>
+      <header className={styles.logo}>
+        <Image src="/PAZCAL.svg" width={200} height={70} alt="logo" />
+      </header>
+      <nav className={styles.nav}>
+        {NavItems.map((item) => (
+          <Link href={item.route} key={item.route}>
+            <a
+              className={[
+                styles.navItem,
+                isThisPage(item.route) ? styles.active : styles.inactive,
+              ].join(" ")}
+            >
+              {item.icon}
+              {item.name}
+            </a>
+          </Link>
+        ))}
+      </nav>
+    </>
   );
 };
 
