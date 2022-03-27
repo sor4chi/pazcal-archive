@@ -5,7 +5,6 @@ interface Props {
   isActive: boolean;
 }
 
-
 const RankSvg: NextPage<Props> = (props) => {
   return (
     <svg

@@ -10,7 +10,7 @@ type Props = {
 
 export const getStaticProps: GetStaticProps = async () => {
   const ranks = await fetchRanks();
-  return { props: { ranks }, revalidate: 1 };
+  return { props: { ranks }, revalidate: 60 };
 };
 
 const Home: NextPage<Props> = ({
