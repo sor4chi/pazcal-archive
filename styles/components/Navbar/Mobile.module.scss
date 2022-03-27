@@ -1,0 +1,36 @@
+@import "../../variable";
+@import "../../breakpoint";
+@import "../../mixin";
+
+.nav {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  display: flex;
+  box-shadow: 0 0 1rem rgba(0, 0, 0, 0.1);
+  @include mq(md) {
+    display: none;
+  }
+}
+
+.navItem {
+  padding: 1rem 0;
+  display: flex;
+  flex-direction: column;
+  width: calc(100% / 4);
+  text-align: center;
+  font-size: 1.2rem;
+  @include mq(xs) {
+    font-size: 1rem;
+  }
+}
+
+.active {
+  background-color: $dark;
+  color: $light;
+}
+
+.inactive {
+  background-color: $light;
+  color: $dark;
+}

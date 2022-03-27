@@ -1,0 +1,11 @@
+@import "../variable";
+
+.active {
+  fill: $light;
+  margin: 0 auto;
+}
+
+.inactive {
+  fill: $dark;
+  margin: 0 auto;
+}
