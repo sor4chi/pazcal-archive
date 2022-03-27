@@ -1,4 +1,4 @@
-import { PrismaClient, Rank } from "@prisma/client";
+import { PrismaClient } from "@prisma/client";
 
 declare global {
   var prisma: PrismaClient | undefined;
@@ -10,6 +10,6 @@ export const prisma =
     log: ["query"],
   });
 
-export type Rank = Rank;
-
 if (process.env.NODE_ENV !== "production") global.prisma = prisma;
+
+export * from "@prisma/client";
