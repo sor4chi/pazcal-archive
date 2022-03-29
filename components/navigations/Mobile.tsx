@@ -1,10 +1,12 @@
+import Image from "next/image";
 import Link from "next/link";
-import styles from "styles/components/Navbar/Mobile.module.scss";
 import { useRouter } from "next/router";
-import RankSVG from "components/svgs/Rank";
+
+import InformationSVG from "components/svgs/Information";
 import LapSVG from "components/svgs/Lap";
 import NewsSVG from "components/svgs/News";
-import InformationSVG from "components/svgs/Information";
+import RankSVG from "components/svgs/Rank";
+import styles from "styles/components/Navbar/Mobile.module.scss";
 
 const MobileNavbar = () => {
   const router = useRouter();
@@ -37,21 +39,26 @@ const MobileNavbar = () => {
   ];
 
   return (
-    <nav className={styles.nav}>
-      {NavItems.map((item) => (
-        <Link href={item.route} key={item.route}>
-          <a
-            className={[
-              styles.navItem,
-              isThisPage(item.route) ? styles.active : styles.inactive,
-            ].join(" ")}
-          >
-            {item.icon}
-            {item.name}
-          </a>
-        </Link>
-      ))}
-    </nav>
+    <>
+      <header className={styles.logo}>
+        <Image src="/PAZCAL.svg" width={200} height={70} alt="logo" />
+      </header>
+      <nav className={styles.nav}>
+        {NavItems.map((item) => (
+          <Link href={item.route} key={item.route}>
+            <a
+              className={[
+                styles.navItem,
+                isThisPage(item.route) ? styles.active : styles.inactive,
+              ].join(" ")}
+            >
+              {item.icon}
+              {item.name}
+            </a>
+          </Link>
+        ))}
+      </nav>
+    </>
   );
 };
 

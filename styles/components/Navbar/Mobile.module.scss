@@ -2,12 +2,20 @@
 @import "../../breakpoint";
 @import "../../mixin";
 
+.logo {
+  text-align: center;
+  @include mq(md) {
+    display: none;
+  }
+}
+
 .nav {
-  position: absolute;
+  position: fixed;
   bottom: 0;
+  z-index: 10;
   width: 100%;
   display: flex;
-  box-shadow: 0 0 1rem rgba(0, 0, 0, 0.1);
+  box-shadow: 1rem 0 0 0 rgba(0, 0, 0, 0.1);
   @include mq(md) {
     display: none;
   }
@@ -19,9 +27,12 @@
   flex-direction: column;
   width: calc(100% / 4);
   text-align: center;
-  font-size: 1.2rem;
+  font-size: 1rem;
   @include mq(xs) {
-    font-size: 1rem;
+    font-size: 1.2rem;
+  }
+  @include pwa() {
+    padding-bottom: 3rem;
   }
 }
 

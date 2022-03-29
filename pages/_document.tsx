@@ -4,7 +4,9 @@ class Document extends NextDocument {
   render() {
     return (
       <Html>
-        <Head />
+        <Head>
+          <meta name="apple-mobile-web-app-capable" content="yes"></meta>
+        </Head>
         <body>
           <Main />
           <NextScript />

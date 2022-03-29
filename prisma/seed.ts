@@ -1,5 +1,6 @@
-import { prisma } from "lib/prisma";
 import { createRankData } from "./seeds/rank";
+
+import { prisma } from "lib/prisma";
 
 const main = async () => {
   await prisma.rank.createMany({
