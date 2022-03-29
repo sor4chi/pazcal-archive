@@ -5,3 +5,9 @@
     @content;
   }
 }
+
+@mixin pwa() {
+  @media (display-mode: standalone) {
+    @content;
+  }
+}

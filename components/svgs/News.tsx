@@ -1,11 +1,12 @@
 import { NextPage } from "next";
+
 import styles from "styles/components/svg.module.scss";
 
 interface Props {
   isActive: boolean;
 }
 
-const RankSvg: NextPage<Props> = (props) => {
+const NewsSvg: NextPage<Props> = (props) => {
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"
@@ -25,4 +26,4 @@ const RankSvg: NextPage<Props> = (props) => {
   );
 };
 
-export default RankSvg;
+export default NewsSvg;

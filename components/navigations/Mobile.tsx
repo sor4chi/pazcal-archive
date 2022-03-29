@@ -1,11 +1,12 @@
 import Image from "next/image";
 import Link from "next/link";
-import styles from "styles/components/Navbar/Mobile.module.scss";
 import { useRouter } from "next/router";
-import RankSVG from "components/svgs/Rank";
+
+import InformationSVG from "components/svgs/Information";
 import LapSVG from "components/svgs/Lap";
 import NewsSVG from "components/svgs/News";
-import InformationSVG from "components/svgs/Information";
+import RankSVG from "components/svgs/Rank";
+import styles from "styles/components/Navbar/Mobile.module.scss";
 
 const MobileNavbar = () => {
   const router = useRouter();

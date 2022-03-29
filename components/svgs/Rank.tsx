@@ -1,4 +1,5 @@
 import { NextPage } from "next";
+
 import styles from "styles/components/svg.module.scss";
 
 interface Props {

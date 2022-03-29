@@ -1,8 +1,9 @@
 import { NextPage, GetStaticProps, InferGetStaticPropsType } from "next";
+
+import RankCalculator from "components/calculators/Rank";
 import Navigation from "components/navigations/Index";
-import EasyCalculator from "components/calculators/Easy";
-import { ResponsedRank } from "types/rank";
 import { fetchRanks } from "lib/api/rank";
+import { ResponsedRank } from "types/rank";
 
 type Props = {
   rank: ResponsedRank[];
@@ -19,7 +20,7 @@ const Home: NextPage<Props> = ({
   return (
     <div>
       <Navigation />
-      <EasyCalculator ranks={ranks} />
+      <RankCalculator ranks={ranks} />
     </div>
   );
 };

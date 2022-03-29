@@ -1,9 +1,10 @@
 import * as fs from "fs";
-import { Prisma } from "@prisma/client";
 import * as path from "path";
 
+import { Prisma } from "@prisma/client";
+
 export const createRankData = (): Prisma.RankCreateManyInput[] => {
-  let rankData: Prisma.RankCreateManyInput[] = [];
+  const rankData: Prisma.RankCreateManyInput[] = [];
   const seedFilePath = path.join(__dirname, "./data/rank.txt");
   const seedFile = fs.readFileSync(seedFilePath, "utf8");
   let counter = 1;
