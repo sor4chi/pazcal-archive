@@ -9,6 +9,7 @@ import { PersedRank } from "types/rank";
 
 type Props = {
   ranks: PersedRank[];
+  id: number;
 };
 
 const Rank = ({ ranks }: Props) => {
