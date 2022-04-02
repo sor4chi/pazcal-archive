@@ -4,7 +4,7 @@
 
 .logo {
   text-align: center;
-  @include mq(md) {
+  @include mq-up(md) {
     display: none;
   }
 }
@@ -16,7 +16,7 @@
   width: 100%;
   display: flex;
   box-shadow: 1rem 0 0 0 rgba(0, 0, 0, 0.1);
-  @include mq(md) {
+  @include mq-up(md) {
     display: none;
   }
 }
@@ -28,7 +28,7 @@
   width: calc(100% / 4);
   text-align: center;
   font-size: 1rem;
-  @include mq(xs) {
+  @include mq-up(xs) {
     font-size: 1.2rem;
   }
   @include pwa() {

@@ -8,7 +8,7 @@
   margin: auto;
   display: none;
   justify-content: space-between;
-  @include mq(md) {
+  @include mq-up(md) {
     display: flex;
   }
 }

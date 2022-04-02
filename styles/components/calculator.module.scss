@@ -11,7 +11,7 @@
   align-items: center;
   justify-content: center;
   flex-wrap: wrap;
-  @include mq(ms) {
+  @include mq-up(ms) {
     margin-top: 10rem;
   }
 }
@@ -46,7 +46,7 @@
   color: $light;
   font-size: 3rem;
   font-weight: bold;
-  @include mq(ms) {
+  @include mq-up(ms) {
     font-size: 2rem;
   }
 }

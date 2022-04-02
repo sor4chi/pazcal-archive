@@ -1,7 +1,13 @@
 @import "breakpoint";
 
-@mixin mq($breakpoint) {
-  @media #{map-get($breakpoints, $breakpoint)} {
+@mixin mq-up($breakpoint-up) {
+  @media #{map-get($breakpoints-up, $breakpoint-up)} {
+    @content;
+  }
+}
+
+@mixin mq-down($breakpoint-down) {
+  @media #{map-get($breakpoints-down, $breakpoint-down)} {
     @content;
   }
 }

@@ -1,2 +1,48 @@
+@import "../mixin";
+@import "../variable";
+
 .card {
+  display: flex;
+  height: 10rem;
+  @include mq-up(ms) {
+    height: 15rem;
+  }
+}
+
+.image {
+  position: relative;
+  width: 10rem;
+  @include mq-up(ms) {
+    width: 15rem;
+  }
+}
+
+.info {
+  margin-left: 2rem;
+  width: calc(100% - 10rem);
+  @include mq-up(ms) {
+    width: calc(100% - 15rem);
+  }
+}
+.title {
+  font-size: 2rem;
+  margin-bottom: 0.5rem;
+  color: $dark;
+  @include mq-up(ms) {
+    font-size: 1.8rem;
+  }
+  @include mq-up(lg) {
+    font-size: 2rem;
+  }
+}
+.description {
+  font-size: 1.5rem;
+  display: -webkit-box;
+  overflow: hidden;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  color: $dark;
+  @include mq-down(ms) {
+    display: none;
+  }
 }
