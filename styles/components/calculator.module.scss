@@ -3,7 +3,7 @@
 
 .wrapper {
   max-width: 100rem;
-  margin: 1rem auto 10rem auto;
+  margin: 0 auto 5rem auto;
 }
 .form {
   display: flex;
@@ -44,8 +44,11 @@
   border: none;
   background: $accent-gradient;
   color: $light;
-  font-size: 2rem;
+  font-size: 3rem;
   font-weight: bold;
+  @include mq(ms) {
+    font-size: 2rem;
+  }
 }
 
 .rank_result {
