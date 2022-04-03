@@ -12,23 +12,20 @@ interface Props {
 
 export const getStaticProps: GetStaticProps = async () => {
   const newsList = await fetchNews();
-  for (let i = 0; i < 3; i++) {
-    newsList.push(...newsList);
-  }
   return { props: { newsList }, revalidate: 60 };
 };
 
-const Home: NextPage<Props> = ({ newsList }: Props) => {
+const News: NextPage<Props> = ({ newsList }: Props) => {
   return (
     <div>
       <Navigation />
       <div className={styles.wrapper}>
         <div className={styles.news_container}>
           {newsList.map((news: ResponsedNews) => (
-            <>
-              <NewsCard news={news} key={news.id} />
+            <div key={news.id}>
+              <NewsCard news={news} />
               <hr className={styles.line} />
-            </>
+            </div>
           ))}
         </div>
       </div>
@@ -36,4 +33,4 @@ const Home: NextPage<Props> = ({ newsList }: Props) => {
   );
 };
 
-export default Home;
+export default News;

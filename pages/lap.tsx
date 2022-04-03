@@ -14,7 +14,7 @@ export const getStaticProps: GetStaticProps = async () => {
   return { props: { ranks }, revalidate: 60 };
 };
 
-const Home: NextPage<Props> = ({ ranks }: Props) => {
+const Lap: NextPage<Props> = ({ ranks }: Props) => {
   return (
     <div>
       <Navigation />
@@ -23,4 +23,4 @@ const Home: NextPage<Props> = ({ ranks }: Props) => {
   );
 };
 
-export default Home;
+export default Lap;

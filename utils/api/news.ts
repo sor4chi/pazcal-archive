@@ -8,6 +8,7 @@ export const fetchNews = async (): Promise<ResponsedNews[]> => {
 };
 
 export const fetchNewsById = async (newsId: number): Promise<ResponsedNews> => {
+  console.log(`${BASE_API_URL}/news/${newsId}`);
   const res = await fetch(`${BASE_API_URL}/news/${newsId}`);
   const news = await res.json();
   return news;

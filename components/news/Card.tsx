@@ -11,7 +11,7 @@ interface Props {
 
 const NewsCard = ({ news }: Props) => {
   return (
-    <Link href={"/news/" + news.id}>
+    <Link href={`/news/${news.id}`}>
       <a className={styles.card}>
         <div className={styles.image}>
           <Image

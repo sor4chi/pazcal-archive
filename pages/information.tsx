@@ -2,7 +2,7 @@ import { NextPage } from "next";
 
 import Navigation from "components/navigations/Index";
 
-const Home: NextPage = () => {
+const Information: NextPage = () => {
   return (
     <div>
       <Navigation />
@@ -10,4 +10,4 @@ const Home: NextPage = () => {
   );
 };
 
-export default Home;
+export default Information;

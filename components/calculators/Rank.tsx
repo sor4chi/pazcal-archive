@@ -16,7 +16,7 @@ const Rank = ({ ranks }: Props) => {
   const [fromRank, setFromRank] = useState<PersedRank["rank"] | null>();
   const [toRank, setToRank] = useState<PersedRank["rank"] | null>();
   const [result, setResult] = useState<PersedRank["experience"]>(0);
-  const [twitterShareUrl, setTwitterShareUrl] = useState<string>("");
+  const [twitterShareUrl, setTwitterShareUrl] = useState<string>("/");
 
   const calculate = (): void => {
     const from: PersedRank | undefined = ranks.find(

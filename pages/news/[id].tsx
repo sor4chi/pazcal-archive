@@ -7,9 +7,8 @@ import { fetchNews, fetchNewsById } from "utils/api/news";
 
 export const getStaticPaths: GetStaticPaths = async () => {
   const res: ResponsedNews[] = await fetchNews();
-  const paths = res.map((news: ResponsedNews) => ({
-    params: { id: `${news.id}` },
-  }));
+  const paths: string[] = [];
+  res.map((news: ResponsedNews) => paths.push(`/news/${news.id}`));
   return { paths, fallback: false };
 };
 
@@ -26,9 +25,7 @@ const NewsDetail: NextPage<Props> = ({ news }: Props) => {
   return (
     <div>
       <Navigation />
-      <div className="wrapper">
-        <NewsDetail news={news} />
-      </div>
+      <div className="wrapper">{news.id}</div>
     </div>
   );
 };
