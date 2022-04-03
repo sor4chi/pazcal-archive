@@ -21,18 +21,19 @@ model Rank {
 model NewsCategory {
   id        Int      @id @default(autoincrement())
   name      String   @unique
+  color     String?
   createdAt DateTime @default(now())
   updatedAt DateTime @updatedAt
   News      News[]
 }
 
 model News {
-  id             Int           @id @default(autoincrement())
-  title          String        @unique
-  thumbnail      String
-  content        String
-  category       NewsCategory? @relation(fields: [categoryId], references: [id])
+  id         Int           @id @default(autoincrement())
+  title      String        @unique
+  thumbnail  String
+  content    String
+  category   NewsCategory? @relation(fields: [categoryId], references: [id])
   categoryId Int?
-  createdAt      DateTime      @default(now())
-  updatedAt      DateTime      @updatedAt
+  createdAt  DateTime      @default(now())
+  updatedAt  DateTime      @updatedAt
 }
