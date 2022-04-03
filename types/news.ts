@@ -11,6 +11,7 @@ export interface ResponsedNews {
 export interface ResponsedNewsCategory {
   id: number;
   name: string;
+  color: string;
   createdAt: Date;
   updatedAt: Date;
 }

@@ -4,6 +4,7 @@ import Link from "next/link";
 import styles from "styles/components/card.module.scss";
 import { ResponsedNews } from "types/news";
 import { formatDate } from "utils/format/date";
+import { makeColorDarker } from "utils/style/colorCalculation";
 
 interface Props {
   news: ResponsedNews;
@@ -23,7 +24,15 @@ const NewsCard = ({ news }: Props) => {
         </div>
         <div className={styles.info}>
           <div className={styles.meta}>
-            <span className={styles.category}>{news.category.name}</span>
+            <span
+              className={styles.category}
+              style={{
+                backgroundColor: news.category.color,
+                borderColor: makeColorDarker(news.category.color, "Dark", 50),
+              }}
+            >
+              {news.category.name}
+            </span>
             <span className={styles.time}>
               {formatDate(new Date(news.createdAt))}
             </span>
