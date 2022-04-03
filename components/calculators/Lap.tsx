@@ -7,9 +7,9 @@ import Result from "./Result";
 import styles from "styles/components/calculator.module.scss";
 import { PersedRank } from "types/rank";
 
-type Props = {
+interface Props {
   ranks: PersedRank[];
-};
+}
 
 const Lap = ({ ranks }: Props) => {
   const [timePerLap, setTimePerLap] = useState<number>(0);

@@ -1,22 +1,20 @@
-import { NextPage, GetStaticProps, InferGetStaticPropsType } from "next";
+import { NextPage, GetStaticProps } from "next";
 
 import LapCalculator from "components/calculators/Lap";
 import Navigation from "components/navigations/Index";
-import { ResponsedRank } from "types/rank";
+import { PersedRank } from "types/rank";
 import { fetchRanks } from "utils/api/rank";
 
-type Props = {
-  rank: ResponsedRank[];
-};
+interface Props {
+  ranks: PersedRank[];
+}
 
 export const getStaticProps: GetStaticProps = async () => {
   const ranks = await fetchRanks();
   return { props: { ranks }, revalidate: 60 };
 };
 
-const Home: NextPage<Props> = ({
-  ranks,
-}: InferGetStaticPropsType<typeof getStaticProps>) => {
+const Home: NextPage<Props> = ({ ranks }: Props) => {
   return (
     <div>
       <Navigation />

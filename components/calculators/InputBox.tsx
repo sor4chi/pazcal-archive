@@ -1,11 +1,11 @@
 import styles from "styles/components/calculator.module.scss";
 
-type Props = {
+interface Props {
   id: string;
   label: string;
   placeholder: string;
   setValue: (value: number) => void;
-};
+}
 
 const Rank = ({ id, label, placeholder, setValue }: Props) => {
   return (

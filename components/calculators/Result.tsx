@@ -14,10 +14,10 @@ interface RequiredSet {
   gyudon: number;
 }
 
-type Props = {
+interface Props {
   required: RequiredSet;
   isFirst: boolean;
-};
+}
 
 const Result = ({ required, isFirst }: Props) => {
   const messages = [

@@ -7,9 +7,9 @@ import TwitterSvg from "components/svgs/Twitter";
 import styles from "styles/components/calculator.module.scss";
 import { PersedRank } from "types/rank";
 
-type Props = {
+interface Props {
   ranks: PersedRank[];
-};
+}
 
 const Rank = ({ ranks }: Props) => {
   const [isFirst, setIsFirst] = useState<boolean>(true);

@@ -5,9 +5,9 @@ import styles from "styles/components/card.module.scss";
 import { ResponsedNews } from "types/news";
 import { formatDate } from "utils/format/date";
 
-type Props = {
+interface Props {
   news: ResponsedNews;
-};
+}
 
 const NewsCard = ({ news }: Props) => {
   return (
