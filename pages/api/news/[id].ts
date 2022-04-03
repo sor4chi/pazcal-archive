@@ -7,11 +7,15 @@ export default async function handler(
   req: NextApiRequest,
   res: NextApiResponse,
 ): Promise<void> {
+  const { id } = req.query;
   res.statusCode = 200;
-  const newsList = await prisma.news.findMany({
+  const news = await prisma.news.findUnique({
+    where: {
+      id: Number(id),
+    },
     include: {
       category: true,
     },
   });
-  res.json(newsList);
+  res.json(news);
 }
