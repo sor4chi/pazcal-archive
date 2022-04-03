@@ -31,8 +31,8 @@ model News {
   title          String        @unique
   thumbnail      String
   content        String
-  category       NewsCategory? @relation(fields: [newsCategoryId], references: [id])
-  newsCategoryId Int?
+  category       NewsCategory? @relation(fields: [categoryId], references: [id])
+  categoryId Int?
   createdAt      DateTime      @default(now())
   updatedAt      DateTime      @updatedAt
 }

@@ -8,6 +8,10 @@ export default async function handler(
   res: NextApiResponse,
 ): Promise<void> {
   res.statusCode = 200;
-  const news = await prisma.news.findMany();
+  const news = await prisma.news.findMany({
+    include: {
+      category: true,
+    },
+  });
   res.json(news);
 }
