@@ -2,8 +2,8 @@ import { NextPage, GetStaticProps, InferGetStaticPropsType } from "next";
 
 import RankCalculator from "components/calculators/Rank";
 import Navigation from "components/navigations/Index";
-import { fetchRanks } from "lib/api/rank";
 import { ResponsedRank } from "types/rank";
+import { fetchRanks } from "utils/api/rank";
 
 type Props = {
   rank: ResponsedRank[];

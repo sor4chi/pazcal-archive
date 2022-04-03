@@ -4,6 +4,7 @@
 .card {
   display: flex;
   height: 10rem;
+  padding: 0 1rem;
   @include mq-up(ms) {
     height: 15rem;
   }
@@ -20,8 +21,27 @@
 .info {
   margin-left: 2rem;
   width: calc(100% - 10rem);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
   @include mq-up(ms) {
     width: calc(100% - 15rem);
+  }
+  .meta {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 1rem;
+    color: $dark;
+    font-size: 1.2rem;
+    .category {
+      color: $light;
+      background: $accent-gradient;
+      padding: 0.5rem 1rem;
+      border-radius: 0.5rem;
+    }
+    .time {
+    }
   }
 }
 .title {
@@ -39,9 +59,10 @@
   font-size: 1.5rem;
   display: -webkit-box;
   overflow: hidden;
-  -webkit-line-clamp: 2;
+  -webkit-line-clamp: 1;
   -webkit-box-orient: vertical;
   color: $dark;
+  margin: 0;
   @include mq-down(ms) {
     display: none;
   }

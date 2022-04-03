@@ -3,6 +3,14 @@ export interface ResponsedNews {
   title: string;
   thumbnail: string;
   content: string;
+  category: ResponsedNewsCategory;
+  createdAt: Date;
+  updatedAt: Date;
+}
+
+export interface ResponsedNewsCategory {
+  id: number;
+  name: string;
   createdAt: Date;
   updatedAt: Date;
 }
