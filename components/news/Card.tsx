@@ -9,7 +9,6 @@ type Props = {
 };
 
 const NewsCard = ({ news }: Props) => {
-  console.log(news.thumbnail);
   return (
     <Link href={"/news/" + news.id}>
       <a className={styles.card}>
