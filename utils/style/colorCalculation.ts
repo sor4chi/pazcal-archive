@@ -1,4 +1,4 @@
-export const makeColorDarker = (
+export const changeColorStrength = (
   hexColor: string,
   type: "Light" | "Dark",
   percent: number,

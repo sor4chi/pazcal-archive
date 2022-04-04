@@ -4,7 +4,7 @@ import Link from "next/link";
 import styles from "styles/components/card.module.scss";
 import { ResponsedNews } from "types/news";
 import { formatDate } from "utils/format/date";
-import { makeColorDarker } from "utils/style/colorCalculation";
+import { changeColorStrength } from "utils/style/colorCalculation";
 
 interface Props {
   news: ResponsedNews;
@@ -28,7 +28,11 @@ const NewsCard = ({ news }: Props) => {
               className={styles.category}
               style={{
                 backgroundColor: news.category.color,
-                borderColor: makeColorDarker(news.category.color, "Dark", 50),
+                borderColor: changeColorStrength(
+                  news.category.color,
+                  "Dark",
+                  50,
+                ),
               }}
             >
               {news.category.name}
