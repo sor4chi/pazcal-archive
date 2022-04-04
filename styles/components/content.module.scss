@@ -1,0 +1,35 @@
+@import "../variable";
+@import "../mixin";
+
+.wrapper {
+  height: 100%;
+  max-width: 100rem;
+  margin: 5rem auto;
+  padding: 0 1rem;
+  @include mq-up(ms) {
+    padding: 0 2rem;
+  }
+  .info {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 1.4rem;
+    padding: 0 1rem;
+    .category {
+      height: min-content;
+    }
+    .title {
+      margin: 0;
+      font-size: 3rem;
+      color: $dark;
+      text-align: center;
+    }
+  }
+  .content {
+    padding: 0 1rem;
+    font-size: 1.8rem;
+    @include mq-up(ms) {
+      padding: 0 2rem;
+    }
+  }
+}

@@ -1,10 +1,10 @@
 import Image from "next/image";
 import Link from "next/link";
 
+import Category from "components/atoms/Category";
+import Date from "components/atoms/Date";
 import styles from "styles/components/card.module.scss";
 import { ResponsedNews } from "types/news";
-import { formatDate } from "utils/format/date";
-import { changeColorStrength } from "utils/style/colorCalculation";
 
 interface Props {
   news: ResponsedNews;
@@ -24,22 +24,8 @@ const NewsCard = ({ news }: Props) => {
         </div>
         <div className={styles.info}>
           <div className={styles.meta}>
-            <span
-              className={styles.category}
-              style={{
-                backgroundColor: news.category.color,
-                borderColor: changeColorStrength(
-                  news.category.color,
-                  "Dark",
-                  50,
-                ),
-              }}
-            >
-              {news.category.name}
-            </span>
-            <span className={styles.time}>
-              {formatDate(new Date(news.createdAt))}
-            </span>
+            <Category category={news.category} />
+            <Date date={news.updatedAt} />
           </div>
           <h1 className={styles.title}>{news.title}</h1>
           <p className={styles.description}>{news.content}</p>

@@ -2,6 +2,7 @@ import { GetStaticProps, GetStaticPaths } from "next";
 import { NextPage } from "next";
 
 import Navigation from "components/navigations/Index";
+import NewsContent from "components/news/Content";
 import { ResponsedNews } from "types/news";
 import { fetchNews, fetchNewsById } from "utils/api/news";
 
@@ -25,7 +26,7 @@ const NewsDetail: NextPage<Props> = ({ news }: Props) => {
   return (
     <div>
       <Navigation />
-      <div className="wrapper">{news.id}</div>
+      <NewsContent news={news} />
     </div>
   );
 };
