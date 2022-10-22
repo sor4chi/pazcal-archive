@@ -3,6 +3,34 @@
   "parserOptions": {
     "project": "./tsconfig.json"
   },
-  "plugins": ["@typescript-eslint"],
-  "extends": ["next/core-web-vitals", "plugin:@typescript-eslint/recommended"]
+  "plugins": ["@typescript-eslint", "import", "unused-imports"],
+  "extends": ["next/core-web-vitals", "plugin:@typescript-eslint/recommended"],
+  "rules": {
+    "unused-imports/no-unused-imports": "warn",
+    "import/order": [
+      "error",
+      {
+        "groups": [
+          "builtin",
+          "external",
+          "parent",
+          "sibling",
+          "index",
+          "object",
+          "type"
+        ],
+        "pathGroups": [
+          {
+            "pattern": "@/**",
+            "group": "parent",
+            "position": "before"
+          }
+        ],
+        "alphabetize": {
+          "order": "asc"
+        },
+        "newlines-between": "always"
+      }
+    ]
+  }
 }
