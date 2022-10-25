@@ -9,8 +9,14 @@ import { CustomPageProps, NextPageWithLayout } from "../types/page";
 const Home: NextPageWithLayout<CustomPageProps> = () => {
   const rankFormSchema = z
     .object({
-      from: z.number().min(1).max(testExps.length - 2),
-      to: z.number().min(1).max(testExps.length - 1),
+      from: z
+        .number()
+        .min(1)
+        .max(testExps.length - 2),
+      to: z
+        .number()
+        .min(1)
+        .max(testExps.length - 1),
     })
     .refine((data) => data.from < data.to, {
       message: "fromはtoより小さい値を入力してください",
@@ -30,7 +36,7 @@ const Home: NextPageWithLayout<CustomPageProps> = () => {
         to: toRank,
       });
       const fromExp = testExps[from] || 0;
-      const toExp = testExps[to] || 0
+      const toExp = testExps[to] || 0;
       setResult(toExp - fromExp);
     } catch (e) {
       if (!(e instanceof z.ZodError)) return;
@@ -57,6 +63,11 @@ const Home: NextPageWithLayout<CustomPageProps> = () => {
         }}
         onSubmit={() => calcExp()}
         isSubmitDisabled={!fromRank || !toRank || fromRank >= toRank}
+        onReCalc={() => {
+          setFromRank(null);
+          setToRank(null);
+          setResult(null);
+        }}
       />
     </>
   );
