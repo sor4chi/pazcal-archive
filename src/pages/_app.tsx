@@ -1,18 +1,28 @@
-// src/pages/_app.tsx
 import "../styles/globals.css";
 import { SessionProvider } from "next-auth/react";
-import type { Session } from "next-auth";
-import type { AppType } from "next/app";
+import Head from "next/head";
+
+import { AppPropsWithLayout } from "../types/page";
 import { trpc } from "../utils/trpc";
 
-const MyApp: AppType<{ session: Session | null }> = ({
+const MyApp = ({
   Component,
-  pageProps: { session, ...pageProps },
-}) => {
+  pageProps: { session, title, description, keywords, ...pageProps },
+}: AppPropsWithLayout) => {
+  const getLayout = Component.getLayout ?? ((page) => page);
+
   return (
-    <SessionProvider session={session}>
-      <Component {...pageProps} />
-    </SessionProvider>
+    <>
+      <Head>
+        <title>{title}</title>
+        <meta name="description" content={description} />
+        <meta name="keywords" content={[...keywords].join(", ")} />
+        <link rel="icon" href="/favicon.ico" />
+      </Head>
+      <SessionProvider session={session}>
+        {getLayout(<Component {...pageProps} />)}
+      </SessionProvider>
+    </>
   );
 };
 
