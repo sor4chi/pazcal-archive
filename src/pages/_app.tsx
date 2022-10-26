@@ -17,6 +17,7 @@ const MyApp = ({
         <title>{title}</title>
         <meta name="description" content={description} />
         <meta name="keywords" content={[...keywords].join(", ")} />
+        <meta name="robots" content="noindex" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <SessionProvider session={session}>
