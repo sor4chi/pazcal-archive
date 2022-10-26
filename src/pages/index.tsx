@@ -78,7 +78,7 @@ Home.getLayout = (page) => HeaderFooterLayout(page);
 Home.getInitialProps = () => ({
   title: "Home",
   description: "Home page",
-  keywords: ["home", "page"],
+  keywords: "home, page",
 });
 
 export default Home;

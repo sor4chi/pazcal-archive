@@ -9,7 +9,7 @@ export type NextPageWithLayout<P = unknown, IP = P> = NextPage<P, IP> & {
 export type CustomPageProps = {
   title: string;
   description: string;
-  keywords: string[];
+  keywords: string;
 };
 
 export type AppPropsWithLayout = {
