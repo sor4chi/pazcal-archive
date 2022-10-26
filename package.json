@@ -7,6 +7,7 @@
     "dev": "next dev",
     "postinstall": "prisma generate",
     "lint": "next lint",
+    "lint:fix": "next lint --fix",
     "db:reset--danger": "prisma db push --accept-data-loss --schema=./prisma/reset.prisma; prisma db push --accept-data-loss"
   },
   "prisma": {

@@ -1,6 +1,7 @@
 import { IoIosArrowDown } from "react-icons/io";
 
 import { CalculatorField } from "../organisms/calculator/field";
+import { ReCalcButton } from "../organisms/calculator/re-calc-button";
 import { CalculateResult } from "../organisms/calculator/result";
 import { ShareResult } from "../organisms/calculator/share-result";
 import { SubmitButton } from "../organisms/calculator/submit-button";
@@ -21,6 +22,7 @@ interface Props {
   };
   isSubmitDisabled: boolean;
   onSubmit: () => void;
+  onReCalc: () => void;
 }
 
 export const RankCalculator = ({
@@ -29,11 +31,12 @@ export const RankCalculator = ({
   toRank,
   isSubmitDisabled,
   onSubmit,
+  onReCalc,
 }: Props) => {
   const Content =
     result && fromRank.value && toRank.value ? (
       <>
-        <div className="my-16 flex w-full flex-col items-center justify-center gap-8">
+        <div className="flex w-full flex-col items-center justify-center gap-6">
           <CalculateResult
             result={result}
             fromRank={fromRank.value}
@@ -45,6 +48,7 @@ export const RankCalculator = ({
             fromRank={fromRank.value}
             toRank={toRank.value}
           />
+          <ReCalcButton onReCalc={onReCalc} />
         </div>
       </>
     ) : (
